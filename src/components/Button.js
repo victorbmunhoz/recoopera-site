@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  background-color: ${(props) => props.backgroundColor || 'var(--primary-green)'};
+  background-color: ${(props) =>
+    props.backgroundColor || 'var(--primary-green)'};
   color: ${(props) => props.textColor || 'var(--background)'};
   width: ${(props) => props.width || 'auto'};
   padding: 0.75rem 1.5rem;
@@ -18,7 +19,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ backgroundColor, textColor, hoverColor, width, children, onClick }) => {
+const Button = ({
+  backgroundColor,
+  textColor,
+  hoverColor,
+  width,
+  children,
+  onClick,
+}) => {
   return (
     <StyledButton
       backgroundColor={backgroundColor}

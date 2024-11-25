@@ -170,7 +170,9 @@ const ServiceCard = styled(motion.div)`
   flex: 1;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
@@ -194,7 +196,9 @@ const CustomButton = styled(Button)`
   font-weight: bold;
   padding: ${spacing.small} ${spacing.medium};
   border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 
   &:hover {
     background-color: var(--light-green);
@@ -234,8 +238,9 @@ const Home = () => {
         >
           <h2>Sobre a Recoopera</h2>
           <p>
-            Somos uma empresa comprometida com a sustentabilidade, oferecendo soluções inteligentes
-            para a gestão de resíduos. Nosso objetivo é transformar resíduos em recursos valiosos.
+            Somos uma empresa comprometida com a sustentabilidade, oferecendo
+            soluções inteligentes para a gestão de resíduos. Nosso objetivo é
+            transformar resíduos em recursos valiosos.
           </p>
           <Link to="/sobre">
             <CustomButton>Saiba Mais</CustomButton>
@@ -279,7 +284,11 @@ const Home = () => {
           </ServiceCard>
         </CardsContainer>
         <Link to="/servicos">
-        <CustomButton hoverColor="var(--dark-green)" backgroundColor="var(--dark-background)" textColor="var(--background)">
+          <CustomButton
+            hoverColor="var(--dark-green)"
+            backgroundColor="var(--dark-background)"
+            textColor="var(--background)"
+          >
             Conheça Mais
           </CustomButton>
         </Link>

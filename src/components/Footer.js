@@ -83,7 +83,9 @@ const Footer = () => {
         <Link to="/servicos">Serviços</Link>
         <Link to="/contato">Contato</Link>
       </NavLinks>
-      <Copyright>&copy; 2024 Recoopera. Todos os direitos reservados.</Copyright>
+      <Copyright>
+        &copy; 2024 Recoopera. Todos os direitos reservados.
+      </Copyright>
     </FooterContainer>
   );
 };

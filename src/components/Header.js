@@ -103,13 +103,19 @@ const Header = () => {
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         </li> */}
         <li>
-          <Link to="/sobre" onClick={() => setMenuOpen(false)}>Sobre</Link>
+          <Link to="/sobre" onClick={() => setMenuOpen(false)}>
+            Sobre
+          </Link>
         </li>
         <li>
-          <Link to="/servicos" onClick={() => setMenuOpen(false)}>Serviços</Link>
+          <Link to="/servicos" onClick={() => setMenuOpen(false)}>
+            Serviços
+          </Link>
         </li>
         <li>
-          <Link to="/contato" onClick={() => setMenuOpen(false)}>Contato</Link>
+          <Link to="/contato" onClick={() => setMenuOpen(false)}>
+            Contato
+          </Link>
         </li>
       </NavLinks>
     </Navbar>
