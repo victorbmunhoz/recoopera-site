@@ -6,7 +6,7 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const Home = () => {
+const Services = () => {
   return (
     <Container>
       <h1>Bem-vindo à recoopera SERVIÇOS</h1>
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Services;

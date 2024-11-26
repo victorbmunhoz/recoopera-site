@@ -1,10 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
+import Button from '../../components/Button';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
-import heroImage from '../assets/images/banner-home.webp';
-import aboutImage from '../assets/images/about.webp';
+import heroImage from '../../assets/images/banner-home.webp';
+import parallaxImage from '../../assets/images/parallax-home.webp';
 
 // Variáveis de espaçamento para padronização
 const spacing = {
@@ -13,14 +11,13 @@ const spacing = {
   large: '4rem',
 };
 
-const HomeContainer = styled.div`
+export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing.large};
   background-color: var(--background);
 `;
 
-const HeroSection = styled.section`
+export const HeroSection = styled.section`
   background: url(${heroImage}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -74,14 +71,14 @@ const HeroSection = styled.section`
   }
 `;
 
-const AboutSection = styled.section`
+export const AboutSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${spacing.medium};
   padding: ${spacing.large} ${spacing.medium};
   background: var(--background);
   color: var(--dark-green);
+  gap: ${spacing.medium};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -89,9 +86,10 @@ const AboutSection = styled.section`
   }
 `;
 
-const AboutContent = styled(motion.div)`
+export const AboutContent = styled(motion.div)`
   flex: 1;
   text-align: center;
+  max-width: 45%;
 
   h2 {
     font-size: 2.5rem;
@@ -118,20 +116,58 @@ const AboutContent = styled(motion.div)`
     display: inline-block;
     margin-top: ${spacing.small};
   }
-`;
-
-const AboutImage = styled(motion.img)`
-  flex: 1;
-  max-width: 50%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     max-width: 100%;
   }
 `;
 
-const ServicesSection = styled.section`
+export const AboutImage = styled(motion.img)`
+  flex: 1;
+  max-width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+`;
+
+export const ParallaxSection = styled.section`
+  position: relative;
+  height: 400px;
+  background: url(${parallaxImage}) no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Efeito de sobreposição */
+    z-index: 1;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    color: var(--light-green);
+    text-align: center;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+`;
+
+export const ServicesSection = styled.section`
   padding: ${spacing.large} ${spacing.medium};
   text-align: center;
   background: var(--primary-green);
@@ -148,7 +184,7 @@ const ServicesSection = styled.section`
   }
 `;
 
-const CardsContainer = styled.div`
+export const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -161,7 +197,7 @@ const CardsContainer = styled.div`
   }
 `;
 
-const ServiceCard = styled(motion.div)`
+export const ServiceCard = styled(motion.div)`
   background: var(--background);
   color: var(--dark-green);
   padding: ${spacing.medium};
@@ -191,7 +227,7 @@ const ServiceCard = styled(motion.div)`
   }
 `;
 
-const CustomButton = styled(Button)`
+export const CustomButton = styled(Button)`
   font-size: 1rem;
   font-weight: bold;
   padding: ${spacing.small} ${spacing.medium};
@@ -209,92 +245,3 @@ const CustomButton = styled(Button)`
     transform: translateY(1px);
   }
 `;
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const Home = () => {
-  return (
-    <HomeContainer>
-      {/* Hero Section */}
-      <HeroSection>
-        <h1>Transformando Resíduos em Recursos Valiosos</h1>
-        <p>Contribuímos para um futuro sustentável com soluções inovadoras.</p>
-        <Link to="/contato">
-          <CustomButton>Fale Conosco</CustomButton>
-        </Link>
-      </HeroSection>
-
-      {/* About Section */}
-      <AboutSection>
-        <AboutContent
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          variants={itemVariants}
-        >
-          <h2>Sobre a Recoopera</h2>
-          <p>
-            Somos uma empresa comprometida com a sustentabilidade, oferecendo
-            soluções inteligentes para a gestão de resíduos. Nosso objetivo é
-            transformar resíduos em recursos valiosos.
-          </p>
-          <Link to="/sobre">
-            <CustomButton>Saiba Mais</CustomButton>
-          </Link>
-        </AboutContent>
-
-        <AboutImage
-          src={aboutImage}
-          alt="Sobre a Recoopera"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          variants={itemVariants}
-        />
-      </AboutSection>
-
-      {/* Services Section */}
-      <ServicesSection>
-        <h2>Nossos Serviços</h2>
-        <CardsContainer>
-          <ServiceCard
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={itemVariants}
-          >
-            <h3>Gestão de Resíduos Recorrente</h3>
-            <p>Coleta eficiente e regular para o seu negócio.</p>
-          </ServiceCard>
-          <ServiceCard
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={itemVariants}
-          >
-            <h3>Gestão de Resíduos para Eventos</h3>
-            <p>Planejamento e execução sustentável para eventos.</p>
-          </ServiceCard>
-        </CardsContainer>
-        <Link to="/servicos">
-          <CustomButton
-            hoverColor="var(--dark-green)"
-            backgroundColor="var(--dark-background)"
-            textColor="var(--background)"
-          >
-            Conheça Mais
-          </CustomButton>
-        </Link>
-      </ServicesSection>
-    </HomeContainer>
-  );
-};
-
-export default Home;
