@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../assets/images/logo.svg';
 
@@ -36,39 +35,6 @@ const LogoImage = styled.img`
   }
 `;
 
-const NavLinks = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    flex-direction: column; /* Links em vertical para tablets */
-    align-items: center;
-  }
-
-  @media (min-width: 1025px) {
-    flex-direction: row; /* Links em horizontal para telas maiores */
-    gap: 1.5rem;
-    margin-bottom: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--background);
-    font-weight: 600;
-    font-size: 0.875rem;
-
-    &:hover {
-      color: var(--light-green);
-    }
-
-    @media (min-width: 1025px) {
-      font-size: 1rem;
-    }
-  }
-`;
-
 const Copyright = styled.p`
   font-size: 0.75rem;
 
@@ -81,12 +47,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <LogoImage src={Logo} alt="Recoopera Logo" />
-      {/* <NavLinks>
-        <Link to="/">Home</Link>
-        <Link to="/sobre">Sobre</Link>
-        <Link to="/servicos">Serviços</Link>
-        <Link to="/contato">Contato</Link>
-      </NavLinks> */}
+
       <Copyright>
         &copy; 2024 Recoopera. Todos os direitos reservados.
       </Copyright>
