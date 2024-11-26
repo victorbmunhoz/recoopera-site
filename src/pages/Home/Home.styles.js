@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Button from '../../components/Button';
 import { motion } from 'framer-motion';
 import heroImage from '../../assets/images/banner-home.webp';
-import parallaxImage from '../../assets/images/parallax-home.webp';
 
 // Variáveis de espaçamento para padronização
 const spacing = {
@@ -133,45 +132,12 @@ export const AboutImage = styled(motion.img)`
   }
 `;
 
-export const ParallaxSection = styled.section`
-  position: relative;
-  height: 400px;
-  background: url(${parallaxImage}) no-repeat center center/cover;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Efeito de sobreposição */
-    z-index: 1;
-  }
-
-  h2 {
-    position: relative;
-    z-index: 2;
-    font-size: 2.5rem;
-    color: var(--light-green);
-    text-align: center;
-    margin: 0;
-
-    @media (max-width: 768px) {
-      font-size: 1.8rem;
-    }
-  }
-`;
-
 export const ServicesSection = styled.section`
   padding: ${spacing.large} ${spacing.medium};
   text-align: center;
   background: var(--primary-green);
   color: var(--background);
+  margin: 0; /* Remove margem superior */
 
   h2 {
     font-size: 2.5rem;

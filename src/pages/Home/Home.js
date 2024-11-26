@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ParallaxSection from '../../components/ParallaxSection.js';
 import aboutImage from '../../assets/images/about.webp';
+import parallaxImage from '../../assets/images/parallax-home.webp';
 import {
   HomeContainer,
   HeroSection,
   AboutSection,
   AboutContent,
   AboutImage,
-  ParallaxSection,
   ServicesSection,
   CardsContainer,
   ServiceCard,
   CustomButton,
-} from './Home.styles.js'; // Ajuste o caminho para o arquivo de estilos
+} from './Home.styles.js';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -63,9 +64,12 @@ const Home = () => {
       </AboutSection>
 
       {/* Parallax Section */}
-      <ParallaxSection>
-        <h2>Juntos por um Futuro Sustentável</h2>
-      </ParallaxSection>
+      <ParallaxSection
+        image={parallaxImage}
+        text="Transformando Resíduos em Recursos Valiosos"
+        buttonText="Saiba Mais"
+        onButtonClick={() => console.log('Botão clicado!')}
+      />
 
       {/* Services Section */}
       <ServicesSection>
