@@ -8,7 +8,7 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 4rem 1rem;
   background: var(--dark-background); /* Ajustado para seguir o Header */
   color: var(--background);
   text-align: center;
@@ -19,6 +19,10 @@ const FooterContainer = styled.footer`
     justify-content: space-between;
     padding: 2rem 3rem;
     text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.5rem 10rem;
   }
 `;
 
@@ -77,12 +81,12 @@ const Footer = () => {
   return (
     <FooterContainer>
       <LogoImage src={Logo} alt="Recoopera Logo" />
-      <NavLinks>
+      {/* <NavLinks>
         <Link to="/">Home</Link>
         <Link to="/sobre">Sobre</Link>
         <Link to="/servicos">Serviços</Link>
         <Link to="/contato">Contato</Link>
-      </NavLinks>
+      </NavLinks> */}
       <Copyright>
         &copy; 2024 Recoopera. Todos os direitos reservados.
       </Copyright>
