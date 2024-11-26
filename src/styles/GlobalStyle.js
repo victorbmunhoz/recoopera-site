@@ -42,6 +42,8 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
     }
 
     body {
@@ -53,6 +55,7 @@ export const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
+        padding: 0;
     }
 
     #root {
