@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxSection from '../../components/ParallaxSection.js';
+import ServiceSection from '../../components/ServiceSection.js';
 import aboutImage from '../../assets/images/about.webp';
 import parallaxImage from '../../assets/images/parallax-home.webp';
 import {
@@ -9,10 +10,7 @@ import {
   AboutSection,
   AboutContent,
   AboutImage,
-  ServicesSection,
-  CardsContainer,
-  ServiceCard,
-  CustomButton,
+  CustomButton
 } from './Home.styles.js';
 
 const itemVariants = {
@@ -21,6 +19,17 @@ const itemVariants = {
 };
 
 const Home = () => {
+  const services = [
+    {
+      title: 'Gestão de Resíduos Recorrente',
+      description: 'Coleta eficiente e regular para o seu negócio.',
+    },
+    {
+      title: 'Gestão de Resíduos para Eventos',
+      description: 'Planejamento e execução sustentável para eventos.',
+    },
+  ];
+
   return (
     <HomeContainer>
       {/* Hero Section */}
@@ -66,46 +75,17 @@ const Home = () => {
       {/* Parallax Section */}
       <ParallaxSection
         image={parallaxImage}
-        text="Transformando Resíduos em Recursos Valiosos"
-        buttonText="Saiba Mais"
-        onButtonClick={() => console.log('Botão clicado!')}
+        text="Juntos por um futuro sustentável."
       />
 
       {/* Services Section */}
-      <ServicesSection>
-        <h2>Nossos Serviços</h2>
-        <CardsContainer>
-          <ServiceCard
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 1.0 }}
-            variants={itemVariants}
-          >
-            <h3>Gestão de Resíduos Recorrente</h3>
-            <p>Coleta eficiente e regular para o seu negócio.</p>
-          </ServiceCard>
-          <ServiceCard
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 1.0 }}
-            variants={itemVariants}
-          >
-            <h3>Gestão de Resíduos para Eventos</h3>
-            <p>Planejamento e execução sustentável para eventos.</p>
-          </ServiceCard>
-        </CardsContainer>
-        <Link to="/servicos">
-          <CustomButton
-            hoverColor="var(--dark-green)"
-            backgroundColor="var(--dark-background)"
-            textColor="var(--background)"
-          >
-            Conheça Mais
-          </CustomButton>
-        </Link>
-      </ServicesSection>
+      <ServiceSection
+        title="Nossos Serviços"
+        services={services}
+        buttonText="Conheça Mais"
+        buttonLink="/servicos"
+        itemVariants={itemVariants}
+      />
     </HomeContainer>
   );
 };

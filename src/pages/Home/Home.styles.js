@@ -132,67 +132,6 @@ export const AboutImage = styled(motion.img)`
   }
 `;
 
-export const ServicesSection = styled.section`
-  padding: ${spacing.large} ${spacing.medium};
-  text-align: center;
-  background: var(--primary-green);
-  color: var(--background);
-  margin: 0; /* Remove margem superior */
-
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: ${spacing.medium};
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-  }
-`;
-
-export const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: ${spacing.medium};
-  margin-bottom: ${spacing.medium};
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-export const ServiceCard = styled(motion.div)`
-  background: var(--background);
-  color: var(--dark-green);
-  padding: ${spacing.medium};
-  border-radius: 10px;
-  max-width: 300px;
-  flex: 1;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: ${spacing.small};
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-`;
-
 export const CustomButton = styled(Button)`
   font-size: 1rem;
   font-weight: bold;
