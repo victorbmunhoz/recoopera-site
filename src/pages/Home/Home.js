@@ -4,9 +4,12 @@ import ParallaxSection from '../../components/ParallaxSection.js';
 import ServiceSection from '../../components/ServiceSection.js';
 import aboutImage from '../../assets/images/about.webp';
 import parallaxImage from '../../assets/images/parallax-home.webp';
+import ScrollToTop from '../../components/ScrollToTop.js';
+import ContactSection from '../../components/ContactSection';
+import HeroSection from '../../components/HeroSection';
+import heroImage from '../../assets/images/banner-home.webp';
 import {
   HomeContainer,
-  HeroSection,
   AboutSection,
   AboutContent,
   AboutImage,
@@ -32,14 +35,16 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <ScrollToTop />
       {/* Hero Section */}
-      <HeroSection>
-        <h1>Transformando Resíduos em Recursos Valiosos</h1>
-        <p>Contribuímos para um futuro sustentável com soluções inovadoras.</p>
-        <Link to="/contato">
-          <CustomButton>Fale Conosco</CustomButton>
-        </Link>
-      </HeroSection>
+      <HeroSection
+        image={heroImage}
+        title="Bem-vindo à Recoopera"
+        paragraph="Transformamos resíduos em recursos valiosos, promovendo um futuro mais sustentável."
+        buttonText="Conheça Mais"
+        buttonLink="/sobre"
+        overlayOpacity={0.6}
+      />
 
       {/* About Section */}
       <AboutSection>
@@ -86,6 +91,8 @@ const Home = () => {
         buttonLink="/servicos"
         itemVariants={itemVariants}
       />
+
+      <ContactSection phone="+55 11 99999-9999" email="contato@recoopera.org" />
     </HomeContainer>
   );
 };

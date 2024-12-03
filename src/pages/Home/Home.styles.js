@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../components/Button';
 import { motion } from 'framer-motion';
-import heroImage from '../../assets/images/banner-home.webp';
 
 // Variáveis de espaçamento para padronização
 const spacing = {
@@ -14,60 +13,6 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--background);
-`;
-
-export const HeroSection = styled.section`
-  background: url(${heroImage}) no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-  color: var(--background);
-  position: relative;
-  padding: ${spacing.medium};
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(19, 53, 43, 0.7);
-    z-index: 1;
-  }
-
-  h1 {
-    position: relative;
-    z-index: 2;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--light-green);
-    margin-bottom: ${spacing.medium};
-
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-    }
-  }
-
-  p {
-    position: relative;
-    z-index: 2;
-    font-size: 1.25rem;
-    margin-bottom: ${spacing.medium};
-    color: var(--background);
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
-
-  a {
-    position: relative;
-    z-index: 2;
-  }
 `;
 
 export const AboutSection = styled.section`

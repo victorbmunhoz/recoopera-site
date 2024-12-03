@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CustomButton from '../../components/Button';
 import ParallaxSection from '../../components/ParallaxSection.js';
 import ServiceSection from '../../components/ServiceSection.js';
 import aboutSectionImage from '../../assets/images/about-section.webp';
 import parallaxImage from '../../assets/images/parallax-home.webp';
+import ScrollToTop from '../../components/ScrollToTop.js';
+import HeroSection from '../../components/HeroSection';
+import ContactSection from '../../components/ContactSection';
 import {
   AboutContainer,
-  HeroSection,
   AboutSection,
   AboutText,
   AboutImage,
@@ -20,22 +20,16 @@ import { FaHandsHelping, FaEye, FaLeaf } from 'react-icons/fa';
 const About = () => {
   return (
     <AboutContainer>
+       <ScrollToTop />
       {/* Hero Section */}
-      <HeroSection image={aboutSectionImage}>
-        <h1>Bem-vindo à Recoopera</h1>
-        <p>
-          Transformamos resíduos em recursos valiosos, promovendo um futuro mais sustentável.
-        </p>
-        <Link to="/servicos">
-          <CustomButton
-            backgroundColor="var(--primary-green)"
-            textColor="var(--background)"
-            hoverColor="var(--dark-green)"
-          >
-            Conheça Mais
-          </CustomButton>
-        </Link>
-      </HeroSection>
+      <HeroSection
+        image={aboutSectionImage}
+        title="Bem-vindo à Recoopera"
+        paragraph="Transformamos resíduos em recursos valiosos, promovendo um futuro mais sustentável."
+        buttonText="Conheça Mais"
+        buttonLink="/serviços"
+        overlayOpacity={0.6}
+      />
 
       {/* Nova Seção */}
       <AboutSection>
@@ -108,6 +102,8 @@ const About = () => {
         buttonText="Conheça Mais"
         buttonLink="/servicos"
       />
+
+      <ContactSection phone="+55 11 99999-9999" email="contato@recoopera.org" />
     </AboutContainer>
   );
 };

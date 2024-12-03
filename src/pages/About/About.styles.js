@@ -16,64 +16,6 @@ export const AboutContainer = styled.div`
   background: var(--background);
 `;
 
-// Hero Section com imagem de fundo
-export const HeroSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: ${spacing.large} ${spacing.medium};
-  min-height: 100vh;
-  background: url(${(props) => props.image}) no-repeat center center/cover;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Opacidade da imagem */
-    z-index: 1;
-  }
-
-  h1,
-  p,
-  a {
-    position: relative;
-    z-index: 2;
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: var(--light-green);
-    margin-bottom: ${spacing.medium};
-  }
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--background);
-    margin-bottom: ${spacing.medium};
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-`;
-
 // Seção "Nossa História"
 export const AboutSection = styled.section`
   display: flex;
